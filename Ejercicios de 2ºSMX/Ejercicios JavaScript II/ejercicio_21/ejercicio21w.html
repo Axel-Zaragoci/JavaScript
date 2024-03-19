@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 21</title>
+    <script>
+        // creo la función solicitada, destinada a mostrar un texto por pantalla
+        function muestraMensaje() {
+            document.write(messageContent);
+        };
+    </script>
+</head>
+<body>
+    <input type="text" id="message" placeholder="Tu mensaje:">
+    <button id="button">Enviar mediante función</button>
+
+    <script>
+        // creo constantes para tomar los elementos html necesarios
+        const inputMessage = document.querySelector('#message');
+        const buttonMessage = document.querySelector('#button');
+        // declaro variables que voy a necesitar
+        let messageContent;
+        // genero un evento para poder tomar el contenido del input y 
+        buttonMessage.addEventListener('click', ()=>{
+            // guardo en la variable el contenido del input
+            messageContent = inputMessage.value;
+            // llamo a la función
+            muestraMensaje();
+        });
+    </script>
+</body>
+</html>

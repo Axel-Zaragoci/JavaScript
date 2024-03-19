@@ -1,0 +1,88 @@
+* {
+    font-size: 32px;
+}
+
+body {
+    background-color: #383838;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+h1 {
+    color: #F0F8FF;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+section {
+    text-align: center;
+    background-color: #cbcbcb;
+    padding: 25px 20px 10px 20px;
+}
+
+#screen {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#screen > p {
+    font-size: 0.7em;
+    margin: 12px;
+}
+
+#screen > #top_screen {
+    font-size: 0.5em;
+    margin: 12px;
+}
+
+#screen > #bottom_screen {
+    font-weight: 700;
+}
+
+#numbers {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+#numbers > button {
+    width: 60px;
+    height: 50px;
+    background-color: #383838;
+    color: #cea34e;
+    margin: 10px;
+}
+
+#number2 {
+    display: flex; 
+    justify-content: space-around;
+}
+
+#number2 > button {
+    width: 60px;
+    height: 50px;
+    background-color: #383838;
+    color: #cea34e;
+    margin: 10px;
+}
+
+#point {
+    font-weight: 700;
+}
+
+#calc {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+#calc > button {
+    width: 60px;
+    height: 50px;
+    background-color: #383838;
+    color: #cea34e;
+    margin: 10px;
+}

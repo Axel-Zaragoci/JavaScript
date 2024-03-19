@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <label for="name">Tu nombre:</label>
+    <input type="text" name="name" id="name">
+
+    <label for="preguntas_contestadas">¿Cuántas preguntas has contestado?</label>
+    <input type="number" name="preguntas" id="preguntas_contestadas">
+    
+    <label for="preguntas_acertadas">¿Cuántas preguntas has acertado?</label>
+    <input type="number" name="preguntas" id="preguntas_acertadas">
+
+    <div id="percentaje"></div>
+    <div id="nivel"></div>
+    <script>
+        // creo constantes para poder tratar con los elementos html
+        const inputUserName = document.querySelector('#name');
+        const inputTestAnswered = document.querySelector('#preguntas_contestadas');
+        const inputTestCorrect = document.querySelector('#preguntas_acertadas');
+        const divPercentaje = document.querySelector('#percentaje')
+        const divLevel = document.querySelector('#nivel')
+        // genero todas las variables que necesito y les indico su valor si será necesario el mismo en varios momentos
+        let stringContent, userName, questionAnswered, questionCorrect, cien = 100, percentaje;
+
+        // indico que se guarde el contenido del input del nombre al escribir en él
+        inputUserName.addEventListener('input', ()=>{
+            userName = inputUserName.value;
+        });
+
+        // indico que al añadir contenido al input de las preguntas contestadas se ejecute el siguiente código
+        inputTestAnswered.addEventListener('input', ()=>{
+            //le indico que me guarde el contenido en una variable y luego que pase ese contenido a otra variable en formato numérico
+            stringContent = inputTestAnswered.value;
+            questionAnswered = parseInt(stringContent);
+
+            // creo una condicional que se ejecute solo si las variables con el contenido numérico de ambos inputs (deben de tener contenido ambas) son de tipo 'number' y no 'string'
+            if (typeof questionAnswered === 'number' && typeof questionCorrect === 'number')  {
+                // mediante una simple regla de 3 calculo el porcentaje de preguntas correctas sobre las respondidas
+                percentaje = (questionCorrect * 100) / questionAnswered;
+
+                // genero una condicional para que si el porcentaje de correctas sobre las respondidas es igual a 90 o más, se muestre en un div el porcentaje y en otro el nivel editando su contenido de texto
+                if (percentaje >= 90) {
+                    divPercentaje.textContent = `${percentaje}%`;
+                    divLevel.textContent = `Nivel superior`;
+                }
+                // indico que en caso de que lo anterior sea falso y el porcentaje sea igual o mayor a 75 pero menor que 90, se muestre en un div el porcentaje y en otro el nivel editando su contenido de texto
+                else if (percentaje >= 75 && percentaje < 90) {
+                    divPercentaje.textContent = `${percentaje}%`;
+                    divLevel.textContent = `Nivel medio`;
+                }
+                // indico que en caso de que lo anterior sea falso y el porcentaje sea igual o mayor a 50 pero menor que 75, se muestre en un div el porcentaje y en otro el nivel editando su contenido de texto
+                else if (percentaje >=50 && percentaje < 75) {
+                    divPercentaje.textContent = `${percentaje}%`;
+                    divLevel.textContent = `Nivel regular`;
+                }
+                // indico que en caso de que todo eso sea falso (es decir, el porcentaje sea menor a 50), se muestre le valor de porcentaje y un nivel insuficiente
+                else {
+                    divPercentaje.textContent = `${percentaje}%`;
+                    divLevel.textContent = `Fuera de nivel`;
+                };
+            };
+        });
+
+        inputTestCorrect.addEventListener('input', ()=>{
+            //le indico que me guarde el contenido en una variable y luego que pase ese contenido a otra variable en formato numérico
+            stringContent = inputTestCorrect.value;
+            questionCorrect = parseInt(stringContent);
+
+            // creo una condicional que se ejecute solo si las variables con el contenido numérico de ambos inputs (deben de tener contenido ambas) son de tipo 'number' y no 'string'
+            if (typeof questionAnswered === 'number' && typeof questionCorrect === 'number')  {
+                // mediante una simple regla de 3 calculo el porcentaje de preguntas correctas sobre las respondidas
+                percentaje = (questionCorrect * 100) / questionAnswered;
+
+                // genero una condicional para que si el porcentaje de correctas sobre las respondidas es igual a 90 o más, se muestre en un div el porcentaje y en otro el nivel editando su contenido de texto
+                if (percentaje >= 90) {
+                    divPercentaje.textContent = `${percentaje}%`;
+                    divLevel.textContent = `Nivel superior`;
+                }
+                // indico que en caso de que lo anterior sea falso y el porcentaje sea igual o mayor a 75 pero menor que 90, se muestre en un div el porcentaje y en otro el nivel editando su contenido de texto
+                else if (percentaje >= 75 && percentaje < 90) {
+                    divPercentaje.textContent = `${percentaje}%`;
+                    divLevel.textContent = `Nivel medio`;
+                }
+                // indico que en caso de que lo anterior sea falso y el porcentaje sea igual o mayor a 50 pero menor que 75, se muestre en un div el porcentaje y en otro el nivel editando su contenido de texto
+                else if (percentaje >=50 && percentaje < 75) {
+                    divPercentaje.textContent = `${percentaje}%`;
+                    divLevel.textContent = `Nivel regular`;
+                }
+                // indico que en caso de que todo eso sea falso (es decir, el porcentaje sea menor a 50), se muestre le valor de porcentaje y un nivel insuficiente
+                else {
+                    divPercentaje.textContent = `${percentaje}%`;
+                    divLevel.textContent = `Fuera de nivel`;
+                };
+            };
+        });
+    </script>
+</body>
+</html>

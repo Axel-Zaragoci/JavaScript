@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <label for="number1">Número 1:</label>
+    <input type="number" name="number1" id="number1" required>
+    <label for="number2">Número 2:</label>
+    <input type="number" name="number2" id="number2" required>
+    <label for="number3">Número 3:</label>
+    <input type="number" name="number3" id="number3" required>
+
+    <script>
+        // creo constantes para tomar los elementos html y poder interactuar con ellos
+        const inputNumber1 = document.querySelector('#number1');
+        const inputNumber2 = document.querySelector('#number2');
+        const inputNumber3 = document.querySelector('#number3');
+        // creo 3 variables vacías con las que tratar más adelante
+        let num1, num2, num3;
+
+        // creo un evento para que se ejecute solo si se añade contenido al input del número 1
+        inputNumber1.addEventListener('input', ()=>{
+            // indico que a la variable num1 se le asigne el valor convertido a número del input
+            num1 = parseInt(inputNumber1.value);
+
+            // genero una función que me permita comparar los diferentes números
+            function comparar() {
+                // genero una condicional que se ejecute solo si el número 1 es mayor que el 2
+                if (num1 > num2) {
+
+                    // indico que si el número 1 es mayor que 3 se muestre una alerta indicándolo
+                    if (num1 > num3) {
+                        alert(`El número ${num1} es el mayor`);
+                    }
+                    // le indico que en caso contrario (3 es mayor que 1, y por extensión, que 2) mande una alerta diciendo que 3 es el mayor
+                    else {
+                        alert(`El número ${num3} es el mayor`);
+                    }
+                }
+                // indico que en caso contrario (número2 mayor que 1) se ejecuto lo siguiente
+                else {
+                    // indico que si el número2 es mayor que el 3, se muestre una alerta diciendolo
+                    if (num2 > num3) {
+                        alert(`El número ${num2} es el mayor`);
+                    }
+                    // en caso contrario, (3 es mayor que 2, y por extensión que 1) se indique en una alerta
+                    else {
+                        alert(`El número ${num3} es el mayor`);
+                    }
+                }    
+            }
+
+            // creo una condicional que se ejecute solo si los 3 inputs tienen contenido válido
+            if (inputNumber1.validity.valid && inputNumber2.validity.valid && inputNumber3.validity.valid) {
+                // le indico que espere medio segundo para que de tiempo a poner números de 2 cifras o más, y luego ejecute la función destinada a comparar los números
+                setTimeout(()=>{
+                    comparar();
+                }, 500);
+            };
+        });
+
+        // creo un evento para que se ejecute solo si se añade contenido al input del número 2
+        inputNumber2.addEventListener('input', ()=>{
+            // indico que a la variable num2 se le asigne el valor convertido a número del input
+            num2 = parseInt(inputNumber2.value);
+
+            // genero una función que me permita comparar los diferentes números
+            function comparar() {
+                // genero una condicional que se ejecute solo si el número 1 es mayor que el 2
+                if (num1 > num2) {
+
+                    // indico que si el número 1 es mayor que 3 se muestre una alerta indicándolo
+                    if (num1 > num3) {
+                        alert(`El número ${num1} es el mayor`);
+                    }
+                    // le indico que en caso contrario (3 es mayor que 1, y por extensión, que 2) mande una alerta diciendo que 3 es el mayor
+                    else {
+                        alert(`El número ${num3} es el mayor`);
+                    }
+                }
+                // indico que en caso contrario (número2 mayor que 1) se ejecuto lo siguiente
+                else {
+                    // indico que si el número2 es mayor que el 3, se muestre una alerta diciendolo
+                    if (num2 > num3) {
+                        alert(`El número ${num2} es el mayor`);
+                    }
+                    // en caso contrario, (3 es mayor que 2, y por extensión que 1) se indique en una alerta
+                    else {
+                        alert(`El número ${num3} es el mayor`);
+                    }
+                }    
+            }
+
+            // creo una condicional que se ejecute solo si los 3 inputs tienen contenido válido
+            if (inputNumber1.validity.valid && inputNumber2.validity.valid && inputNumber3.validity.valid) {
+                // le indico que espere medio segundo para que de tiempo a poner números de 2 cifras o más, y luego ejecute la función destinada a comparar los números
+                setTimeout(()=>{
+                    comparar();
+                }, 500);
+            };
+        });
+
+        // creo un evento para que se ejecute solo si se añade contenido al input del número 3
+        inputNumber3.addEventListener('input', ()=>{
+            // indico que a la variable num3 se le asigne el valor convertido a número del input
+            num3 = parseInt(inputNumber3.value);
+
+            // genero una función que me permita comparar los diferentes números
+            function comparar() {
+                // genero una condicional que se ejecute solo si el número 1 es mayor que el 2
+                if (num1 > num2) {
+
+                    // indico que si el número 1 es mayor que 3 se muestre una alerta indicándolo
+                    if (num1 > num3) {
+                        alert(`El número ${num1} es el mayor`);
+                    }
+                    // le indico que en caso contrario (3 es mayor que 1, y por extensión, que 2) mande una alerta diciendo que 3 es el mayor
+                    else {
+                        alert(`El número ${num3} es el mayor`);
+                    }
+                }
+                // indico que en caso contrario (número2 mayor que 1) se ejecuto lo siguiente
+                else {
+                    // indico que si el número2 es mayor que el 3, se muestre una alerta diciendolo
+                    if (num2 > num3) {
+                        alert(`El número ${num2} es el mayor`);
+                    }
+                    // en caso contrario, (3 es mayor que 2, y por extensión que 1) se indique en una alerta
+                    else {
+                        alert(`El número ${num3} es el mayor`);
+                    }
+                }    
+            }
+
+            // creo una condicional que se ejecute solo si los 3 inputs tienen contenido válido
+            if (inputNumber1.validity.valid && inputNumber2.validity.valid && inputNumber3.validity.valid) {
+                // le indico que espere medio segundo para que de tiempo a poner números de 2 cifras o más, y luego ejecute la función destinada a comparar los números
+                setTimeout(()=>{
+                    comparar();
+                }, 500);
+            };
+        });
+    </script>
+
+</body>
+</html>

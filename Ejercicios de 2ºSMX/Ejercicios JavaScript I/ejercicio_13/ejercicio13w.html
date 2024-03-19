@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <label for="sueldo">¿Cuál es tu sueldo?</label>
+    <input type="number" name="sueldo" id="sueldo">
+
+    <label for="años">¿Cuántos años llevas trabajando (no pongas 0)?</label>
+    <input type="number" name="anos" id="anos">
+
+    <script>
+        // creo constantes para tomar los diferentes elementos html y poder tratar con ellos
+        const inputSalary = document.querySelector('#sueldo');
+        const inputYears = document.querySelector('#anos');
+        // creo las diferentes variables que voy a necesitar y a las que otorgaré valores más adelante
+        let salaryString, salary, newSalary, yearsString, years;
+
+        // añado un evento de entrada en el input
+        inputSalary.addEventListener('input', ()=>{
+            // indico que se guarde el contenido del input en formato 'string' y luego se pase a número para poder calcular con ello
+            salaryString = inputSalary.value;
+            salary = parseInt(salaryString)
+
+            // genero una condicional que se ejecute solo si el contenido de ambos es de tipo numérico y diferente a 0, además de los requisitos dados en el enunciado
+            if (  typeof salary === 'number'   &&   typeof years === 'number'   &&   salary != 0   &&  years != 0   &&   salary < 500   &&   years >= 10) {
+                // realizo el cálculo del 20% del salario y se lo añado a una variable (salario + 20% de salario)
+                newSalary = ((20 * salary) / 100);
+                newSalary = newSalary + salary;
+                // genero una nueva alerta avisando del nuevo sueldo
+                alert(`Nuevo sueldo\: ${newSalary}`);
+            // genero una nueva opción variable cuyo único cambio respecto al anterior es que los años han pasado de 10 o más a menos de 10
+            } else if (  typeof salary === 'number'   &&   typeof years === 'number'   &&   salary != 0   &&  years != 0   &&   salary < 500   &&   years < 10) {
+                // realizo el cálculo del 20% del salario y se lo añado a una variable (salario + 20% de salario)
+                newSalary = ((20 * salary) / 100);
+                newSalary = newSalary + salary;
+                // genero una nueva alerta avisando del nuevo sueldo
+                alert(`Nuevo sueldo\: ${newSalary}`);
+            }
+            // genero una nueva opción variable cuyo único cambio respecto al anterior es que los años han pasado de 10 o más a menos de 10
+            else if ( typeof salary === 'number'   &&   typeof years === 'number'   &&   salary != 0   &&  years != 0 && salary > 500) {
+                // genero una alerta avisando que se mantiene el salario
+                alert(`Se mantiene tu salario`);
+            };
+        });
+
+        // añado un nuevo evento de entrada en el input
+        inputYears.addEventListener('input', ()=>{
+            // tomo el contenido del input y lo meto en una variable para luego pasarlo a modo numérico
+            yearsString = inputYears.value;
+            years = parseInt(yearsString)
+
+            // genero una condicional que se ejecute solo si el contenido de ambos es de tipo numérico y diferente a 0, además de los requisitos dados en el enunciado
+            if (  typeof salary === 'number'   &&   typeof years === 'number'   &&   salary != 0   &&  years != 0   &&   salary < 500   &&   years >= 10) {
+                // realizo el cálculo del 20% del salario y se lo añado a una variable (salario + 20% de salario)
+                newSalary = ((20 * salary) / 100);
+                newSalary = newSalary + salary;
+                // genero una nueva alerta avisando del nuevo sueldo
+                alert(`Nuevo sueldo\: ${newSalary}`);
+            // genero una nueva opción variable cuyo único cambio respecto al anterior es que los años han pasado de 10 o más a menos de 10
+            } else if (  typeof salary === 'number'   &&   typeof years === 'number'   &&   salary != 0   &&  years != 0   &&   salary < 500   &&   years < 10) {
+                // realizo el cálculo del 20% del salario y se lo añado a una variable (salario + 20% de salario)
+                newSalary = ((20 * salary) / 100);
+                newSalary = newSalary + salary;
+                // genero una nueva alerta avisando del nuevo sueldo
+                alert(`Nuevo sueldo\: ${newSalary}`);
+            }
+            // genero una nueva opción variable cuyo único cambio respecto al anterior es que los años han pasado de 10 o más a menos de 10
+            else if ( typeof salary === 'number'   &&   typeof years === 'number'   &&   salary != 0   &&  years != 0 && salary > 500) {
+                // genero una alerta avisando que se mantiene el salario
+                alert(`Se mantiene tu salario`);
+            };
+        });
+    </script>
+</body>
+</html>

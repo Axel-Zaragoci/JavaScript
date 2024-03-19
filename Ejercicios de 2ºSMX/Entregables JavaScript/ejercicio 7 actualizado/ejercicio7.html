@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1> Ejercicio 7 - Sumar valores con variables </h1>
+		<script>
+			/*let vector=[25, 10.5, 6];
+
+			let suma=0;
+
+			let mensaje="Versión Arrays \n La suma de ";
+
+			for(let i=0; i<vector.length-1; i++) {
+				suma += vector[i];
+				mensaje += vector[i]+" + ";
+			}
+
+			suma += vector[i];
+
+			mensaje += vector[i]+" es igual a:\n "+suma;
+
+			alert(mensaje);*/
+
+			// genero todas las variables que voy a necesitar para este código
+			let vector = [], i, suma = 0, mensaje, promptContent, number;
+			// genero un bucle 'while' que me va a permitir dejar de añadir datos al array al escribir 'exit'
+			while (promptContent != `exit`) {
+				// genero los prompt para preguntar, junto a un trim para eliminar espacios sobrantes al principio y final, evitando errores al pasar a número
+				promptContent = prompt(`Añada valores numéricos que sumar \n escriba \"exit\" para salir`).trim();
+				// paso el contenido a formato numérico
+				number = parseInt(promptContent);
+				
+				// genero una condicional que se ejecutará si el contenido a añadir al array no es NaN (Not a Number)
+				if (!isNaN(number)) {
+					// añado al final del array el contenido del prompt
+					vector.push(number);
+				};
+			};
+
+			// indico que a la variable mensaje se le añade el string marcado
+			mensaje = "Versión Arrays \n La suma de ";
+			// genero un bulce for para poder pasar por el array, ahora completado
+			for ( i = 0; i < vector.length; i++) {
+				// indico que se cada vez se sume el contenido de la casilla del array, lo que resultará en sumar todos los datos el array
+				suma += vector[i];
+				// indico que cada vez se añada al mensaje el valor de la casilla del array
+				mensaje += vector[i] + ` + `;
+			};
+
+			// indico un final al mensaje usando la variable que ha sumado todos los valores en el bucle for
+			mensaje += ` es igual a \n ${suma}`;
+
+			// genero la alerta con el contenido de la variable mensaje
+			alert(mensaje)
+		</script>
+	</body>
+</html>

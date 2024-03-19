@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <h1>CALCULADORA BÁSICA</h1>
+
+    <section>
+        <div id="screen">
+            <p id="top_screen">&nbsp;</p>
+            <p id="bottom_screen">&nbsp;</p>
+        </div>
+
+        <div id="numbers">
+            <button id="seven" onclick="sevenButton()">7</button>
+            <button id="eight" onclick="eightButton()">8</button>
+            <button id="nine">9</button>
+            <button id="four">4</button>
+            <button id="five">5</button>
+            <button id="six">6</button>
+            <button id="one">1</button>
+            <button id="two">2</button>
+            <button id="three">3</button>
+        </div>
+
+        <div id="number2">
+            <button id="zero">0</button>
+            <button id="point">·</button>
+        </div>
+
+        <div id="calc">
+            <button id="suma">+</button>
+            <button id="resta">-</button>
+            <button id="multiplicacion">x</button>
+            <button id="division">/</button>
+            <button id="potencia">xᵉ</button>
+            <button id="resto">R</button>
+            <button id="igual">=</button>
+            <button id="borrar">C</button>
+        </div>
+    </section>
+
+    <script>
+        const buttons = document.querySelectorAll('button');
+
+        const topScreen = document.querySelector('#top_screen');
+        const bottomScreen = document.querySelector('#bottom_screen');
+
+        const zero = document.querySelector('#zero')
+        const one = document.querySelector('#one');
+        const two = document.querySelector('#two');
+        const three = document.querySelector('#three');
+        const four = document.querySelector('#four');
+        const five = document.querySelector('#five');
+        const six = document.querySelector('#six');
+        const seven = document.querySelector('#seven');
+        const eight = document.querySelector('#eight');
+        const nine = document.querySelector('#nine');
+
+        const sum = document.querySelector('#suma');
+        const substraction = document.querySelector('#resta');
+        const multiplication = document.querySelector('#multiplicacion');
+        const division = document.querySelector('#division');
+        const power = document.querySelector('#potencia');
+        const remainder = document.querySelector('#resto');
+        const equal = document.querySelector('#igual');
+        const clean = document.querySelector('#borrar');
+
+        let number1, number2, result, operation;
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('mouseover', ()=>{
+                buttons[i].style.backgroundColor = '#ffffff';
+            });
+            buttons[i].addEventListener('mouseout', ()=>{
+                buttons[i].style.backgroundColor = '#383838';
+            });
+        };
+
+        topScreenContent = topScreen.textContent;
+        bottomScreenContent = bottomScreen.textContent;
+
+        function sevenButton() {
+            topScreen.textContent = topScreen.textContent + `7`;
+            bottomScreen.textContent = bottomScreen.textContent + `7`;
+        };
+        function eightButton() {
+            topScreen.textContent = topScreen.textContent + `8`;
+            bottomScreen.textContent = bottomScreen.textContent + `8`;
+        };
+    </script>
+</body>
+</html>

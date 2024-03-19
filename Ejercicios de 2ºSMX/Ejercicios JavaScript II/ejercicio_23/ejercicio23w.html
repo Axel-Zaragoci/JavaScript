@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 23</title>
+</head>
+<body id="body">
+    <label for="num1"></label>
+    <input type="number" name="num1" id="num1">
+
+    <label for="num2"></label>
+    <input type="number" name="num2" id="num2">
+
+    <script>
+        // genero constantes para obtener y tratar con elementos html
+        const inputNum1 = document.querySelector('#num1');
+        const inputNum2 = document.querySelector('#num2');
+        const body = document.querySelector('#body')
+        // declaro variables que voy a requerir
+        let num1, num2, element;
+
+        element = document.createElement('p');
+        body.append(element);
+
+        // declaro la función destinada a comparar ambos números
+        function compare() {
+            num1 = parseInt(inputNum1.value);
+            num2 = parseInt(inputNum2.value);
+
+            if (num1 > num2) {
+                element.textContent = `El número ${num1} es mayor`;
+            } else {
+                element.textContent = `El número ${num2} es mayor`;
+            };
+        };
+
+        // genero eventos que ejecuten la función
+        inputNum1.addEventListener('input', ()=>{
+            compare()
+        });
+        inputNum2.addEventListener('input', ()=>{
+            compare()
+        });
+    </script>
+</body>
+</html>

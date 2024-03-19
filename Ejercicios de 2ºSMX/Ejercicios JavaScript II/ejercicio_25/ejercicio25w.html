@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 25</title>
+</head>
+<body>
+    <script>
+        let num1, num2, num3, result;
+        num1 = prompt(`Indica el primer número a multiplicar:`);
+        num1 = parseInt(num1);
+        num2 = prompt(`Indica el segundo número a multiplicar:`);
+        num2 = parseInt(num2);
+        num3 = prompt(`Indica el tercer número a multiplicar:`);
+        num3 = parseInt(num3);
+
+        function multiplicar() {
+            if ( isNaN(num1) | isNaN(num2) | isNaN(num3)) {
+                alert(`Error: Uno de los números solicitados no era un número, por favor, vuelva a escribir los números en formato numérico (1, 2, 3...)`);
+            }
+            else {
+                result = num1 * num2 * num3;
+                alert(`La solución de multiplicar ${num1} * ${num2} * ${num3} es ${result}`);
+            };
+        };
+
+        multiplicar();
+    </script>
+</body>
+</html>

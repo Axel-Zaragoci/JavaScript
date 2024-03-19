@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ejercicio 24</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <input type="number" name="number" id="num">
+    <p id="text"></p>
+    <script>
+        // genero constantes para tomar los elementos html
+        const inputNumber = document.querySelector('#num');
+        const textWrapper = document.querySelector('#text');
+        let number, remainder;
+
+        // genero un evento para tomar en tipo número el contenido del input
+        inputNumber.addEventListener('input', ()=>{
+            number = parseInt(inputNumber.value);
+        });
+
+        function calc() {
+            remainder = number % 2;
+
+            if (remainder == 0) {
+                textWrapper.textContent = `El número es par`;
+            }
+            else {
+                textWrapper.textContent = `El número es impar`;
+            };
+        };
+
+        setInterval(calc(), 500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19</title>
+</head>
+<body>
+    <script>
+        // genero las 2 variables que necesito para realizar el ejercicio
+        let result = 1, i;
+        // genero un promp para que me indiquen el número del que realizar la integral y pongo el resultado en una variable
+        let promptNumber = prompt(`Indica un número para descubrir su integral`);
+        // pongo en una variable el contenido de la variable anterior en formato numérico
+        number = parseInt(promptNumber);
+        // genero un bucle for para poder hacer la reducción de cálculo para la integral
+        for (i = 2; i <= number; i++) {
+            // realizo una operación para realizar la integral (me permite multiplicar la variable (inicialmente 1) por si misma menos -1 hasta que se multiplique por 1)
+            result*= i;
+        };
+        // genero una alerta indicando la alerta
+        alert(`La integral de ${number} es ${result}`);
+    </script>
+</body>
+</html>

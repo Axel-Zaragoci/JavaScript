@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <script>
+        // creo dos variables que saquen el resultado de unos prompt
+        let test1 = prompt(`\¿Cual ha sido la nota del primer examen\?`);
+        let test2 = prompt(`\¿Cual ha sido la nota del segundo examen\?`);
+        // creo dos variables que pasen el contenido de los prompt a números, ya que lo guarda como string y yo necesito que sean numéricos
+        let note1 = parseInt(test1);
+        let note2 = parseInt(test2);
+
+        // creo una condicional que se ejecute solo si la nota de ambos exámenes es igual o superior a cinco
+        if (note1 >= 5 && note2 >= 5) {
+            // Creo una alerta que muestre que se han aprobado ambos exámenes
+            alert(`Has aprobado los dos examenes`);
+            // Indico que se escriba en pantalla el mensaje de que se han aprobado ambos exámenes
+            document.write(`Has aprobado los dos examenes`);
+        };
+    </script>
+</body>
+</html>

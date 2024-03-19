@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 35</title>
+</head>
+<body>
+    <button id="red">Rojo</button>
+    <button id="blue">Azul</button>
+
+    <script>
+        const background = document.querySelector('body');
+        const red = document.querySelector('#red');
+        const blue = document.querySelector('#blue');
+
+        red.addEventListener('click', ()=>{
+            background.style.backgroundColor = 'red';
+        });
+        blue.addEventListener('click', ()=>{
+            background.style.backgroundColor = 'blue';
+        });
+
+    </script>
+</body>
+</html>

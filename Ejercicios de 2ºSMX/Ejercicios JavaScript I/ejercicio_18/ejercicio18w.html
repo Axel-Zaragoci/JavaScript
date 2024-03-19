@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18</title>
+</head>
+<body>
+    <script>
+        // creo un array con todas las letras del DNI
+        let letras =  ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N','J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+        // creo las variables que voy a requerir a lo largo del código
+        let numbersPrompt, letterPrompt, dividend, divisor = 23, result, letter;
+
+        // genero los prompts para el número y letras y almaceno sus resultados
+        numbersPrompt = prompt(`Indicame los números de tu DNI`);
+        letterPrompt = prompt(`Indicame la letra de tu DNI`);
+
+        // creo una condicional que se ejecute solo si el número esta entre 0 y 99999999, es decir, coincide con los números del DNI
+        if (numbersPrompt < 0 | numbersPrompt > 99999999) {
+            // mando una alerta para avisar de que el número no es válido
+            alert(`Número no valido`);
+            // Paro la ejecución del código
+            throw new Error (`Número no válido`);
+        };
+
+        // genero una variable que contenga el contenido de los números del prompt en forma numérico
+        dividend = parseInt(numbersPrompt);
+
+        // genero una función que me va a permitir acceder al resto
+        function div(dividend, divisor) {
+            // le indico que me devuelva lo que haya en el interior
+            return {
+                // utilizo el operador "%" para que me saque el resto de la división y lo ponga en una variable
+                remainder: dividend % divisor
+            };
+        };
+
+        // pongo en una variable el resultado de la función
+        result = div(dividend, divisor);
+
+        // le indico que me guarde en una variable el contenido de la variable donde está el resto, ya que este contenido ahora se accederá desde fuera de la función
+        letter = result.remainder;
+
+        //genero una condicional para que se ejecute solo si la letra cuya posición en el array sea igual al resultado del resto 
+        if (letras[letter] == letterPrompt) {
+            // genero una alerta para indicar que la combinación de letra y número es correcta
+            alert(`La letra y el número son correctos`);
+        }
+        // en caso de que no se ejecute el código anterior, se debe de ejecutar esto
+        else {
+            // genero una alerta diciendo que no coinciden la letra y los números
+            alert(`El número y la letra no coinciden`);
+        };
+    </script>
+</body>
+</html>

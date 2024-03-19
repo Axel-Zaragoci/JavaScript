@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-color: #11111b;
+}
+
+body > div > p {
+    font-family: 'orbitron', serif;
+    color: #e6e6e6;
+}
+
+body > div > #time {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+body > div > #date {
+    font-size: 30px;
+}

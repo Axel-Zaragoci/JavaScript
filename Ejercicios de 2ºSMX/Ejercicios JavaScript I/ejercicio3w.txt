@@ -1,0 +1,8 @@
+var num1, num2, num3; => Funciona
+var _cadena, 1_cadena, correcto; => "1_cadena" genera un error
+num1=10; => Funciona
+num2=25,6: => Funciona
+cadena=Hola Mundo! => "Mundo!" genera un error
+Correcto=true => Funciona
+1_cadena="Adios"; => "1_cadena" genera un error
+num3=-15; => Funciona

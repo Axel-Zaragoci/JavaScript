@@ -1,0 +1,33 @@
+body{
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    background-color: #060630;
+    color: #ffffff;
+}
+
+main {
+    width: 750px;
+}
+
+h1 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    color: #edc3c3;
+}
+
+section {
+    border-bottom: 2px solid #cea34c;
+    border-bottom-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: #cea34c;
+}
+
+p {
+    font-size: 1.2em;
+}

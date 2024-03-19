@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form action="#" method="get">
+        <fieldset id="wrapper">
+            <legend>Ejemplo</legend>
+            <input type="text" placeholder="Tu texto:" id="texto" required>
+
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" required>
+
+            <label for="email">_@_._</label>
+            <input type="email" placeholder="Tú correo electrónico" id="email" required>
+
+            <select id="select">
+                <optgroup id="grupo" label="Idea">
+                    <option>Opción</option>
+                </optgroup>
+            </select>    
+            <input type="submit" id="envio">
+            <p id="error">Rellena el formulario</p>
+        </fieldset>
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>

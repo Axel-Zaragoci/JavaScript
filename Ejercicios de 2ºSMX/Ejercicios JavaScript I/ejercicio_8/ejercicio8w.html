@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <noscript>
+        <h2>Este navegador no admite javascript</h2>
+    </noscript>
+
+    <label for="name">Nombre:</label>
+    <input type="text" name="name" class="input" id="name" required>
+
+    <label for="birthday">Fecha de nacimiento:</label>
+    <input type="date" name="birthday" class="input" id="birthday" required>
+
+    <script lang="javascript">
+        // creo una constante para seleccionar el input para el nombre
+        const inputUserName = document.querySelector('#name');
+        // creo una constante para seleccionar el input para la fecha de nacimiento
+        const inputUserBirth = document.querySelector('#birthday');
+        // creo una variable para el contenido del input date y el input text
+        let userBirthday, userName;
+        // creo una variable con la fecha actual (día, mes, año, hora, minutos, segundos)
+        let actualDate = new Date();
+        // creo una variable para sacar el año de la variable actualDate
+        let year = actualDate.getFullYear();
+        // creo una variable para sacar el mes (le sumo uno porque enero es el mes cero para javascript, y yo necesito el uno) de la variable actualDate
+        let month = actualDate.getMonth() + 1;
+        // creo una variable para sacar el día de la variable actualDate
+        let day = actualDate.getDate();
+        // creo una variable de fecha para crear el string que junte los tres datos en una sola variable y con el formato necesario
+        let date = `${year}-${month}-${day}`;
+        // creo todas las variables que necesitaré para el cálculo de días
+        let birthYear, birthYearNum, birth100, birth100string, todayDate, todayDateForMath, dif100, diasA100, aFecha1, aFecha2, fFecha1, fFecha2, dif, dias;
+        // creo una variable que almacene un pattern para que la alerta se dispare solo si la fecha es de los siglos 2000 o 1900, para que de esta manera, se dispare la alerta solo una vez los 4 números del año se añadan
+        let pattern = /^((1|2)[0-9]{3})\-([0-9]{2})\-([0-9]{2})$/;
+
+        // creo un evento para que al añadir texto al input text, se guarde el contenido en una variable
+        inputUserName.addEventListener('input', ()=>{
+            userName = inputUserName.value;
+        })
+
+        // creo un evento para el resto del código, es decir, sacar la fecha del input, hacer los cálculos de días y la alerta
+        inputUserBirth.addEventListener('input', ()=>{
+            // indico que se guarde el contenido del input date en una variable
+            userBirthday = inputUserBirth.value;
+            
+            // creo una condicional que se dispare solo si el input date cumple con el pattern mencionado anteriormente
+            if (pattern.test(userBirthday)) {
+                // añado valor a una variable para que contenga un array con el día, mes y año de la fecha de nacimiento indicada
+                aFecha1 = userBirthday.split('-');
+                // añado valor a una variable para que contenga un array con el día, mes y año de la fecha actual
+                aFecha2 = date.split('-');
+                // añado valor a una variable para que constituya un objeto de fecha con el que se pueda operar que sea la fecha de nacimiento
+                fFecha1 = Date.UTC(aFecha1[0],aFecha1[1]-1,aFecha1[2]);
+                // añado valor a una variable para que constituya un objeto de fecha con el que se pueda operar que sea la fecha actual
+                fFecha2 = Date.UTC(aFecha2[0],aFecha2[1]-1,aFecha2[2]);
+                // creo una variable que almacene la diferencia de tiempo entre la fecha actual y la de nacimiento (al ser UTC, lo guarda en milisegundos)
+                dif = fFecha2 - fFecha1;
+                // creo una variable que transforme los milisegundos en dias para poder usarlos más adelante en la alerta
+                dias = Math.floor(dif / (1000 * 60 * 60 * 24));
+
+                // vuelvo a dividir la fecha de nacimiento indicada en un array, ya que para facilitarme el código, he vuelto a crearlo para este segundo apartado
+                birthYear = userBirthday.split('-');
+                // para poder añadir 100 años, meto en una variable el año de nacimiento, sacado del array, solo que pasado a número para poder operar
+                birthYearNum = parseInt(birthYear[0]);
+                // le añado 100 al número del año
+                birth100 = birthYearNum + 100;
+                // formo una cadena de texto que sea la fecha de nacimiento indicada inicial con 100 años extra
+                birth100string = `${birth100}-${birthYear[1]}-${birthYear[2]}`;
+                // separo la cadena anterior en un array como otras veces
+                birth100string = birth100string.split('-');
+                // vuelvo a separar la fecha actual en un array
+                todayDate = date.split('-');
+                // añado valor a una variable para que constituya un objeto de fecha con el que se pueda operar que sea la fecha de nacimiento + 100
+                birth100date = Date.UTC(birth100string[0],birth100string[1]-1,birth100string[2]);
+                // añado valor a una variable para que constituya un objeto de fecha con el que se pueda operar que sea la fecha actual
+                todayDateForMath = Date.UTC(todayDate[0],todayDate[1]-1,todayDate[2]);
+                // añado valor a una variable para que sea la diferencia en milisegundos entre los 100 años y la fecha actual
+                dif100 = birth100date - todayDateForMath;
+                // transformo los milisegundos anteriores en dias
+                diasA100 = Math.floor(dif100 / (1000 * 60 * 60 * 24));
+                
+                // creo una alerta como pedido en el enunciado usando las variables del contenido de input text y las dos cantidades de dias
+                alert(`${userName} has vivido ${dias} días y te faltan ${diasA100} días para tener 100 años`);
+            };
+        });
+    </script>
+</body>
+</html>
